@@ -1,9 +1,11 @@
 #Spider making
+import sys
+sys.path.append('../')
 
 from scrapy.spiders import Spider
 from scrapy.selector import Selector
 
-from douban_new_movie.items import DoubanNewMovieItem
+from items import DoubanNewMovieItem
 
 
 class DoubanNewMovieSpider(Spider):
