@@ -13,7 +13,7 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 class DoubanMpSpiderPipeline(object):
-    def _init_(self):
+    def open_spider(self,spider):
         self.file=codecs.open('douban_mp_movie.json', mode='wb+', encoding='utf-8')
 
     def process_item(self, item, spider):

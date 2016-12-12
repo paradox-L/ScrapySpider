@@ -8,7 +8,7 @@ import json
 import codecs
 
 class DoubanNewMoviePipeline(object):
-    def _init_(self):
+    def open_spider(self,spider):
         self.file=codecs.open('douban_new_movie.json',mode='wb',encoding='utf-8')
 
     def process_item(self, item, spider):
