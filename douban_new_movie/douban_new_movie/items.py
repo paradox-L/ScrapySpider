@@ -4,11 +4,11 @@
 #
 # See documentation in:
 # http://doc.scrapy.org/en/latest/topics/items.html
+
 import scrapy
 
-class DoubanNewMovieItem(scrapy.Item):
 
+class DoubanNewMovieItem(scrapy.Item):
 	movie_name=scrapy.Field()
 	movie_star=scrapy.Field()
 	movie_url=scrapy.Field()
-	

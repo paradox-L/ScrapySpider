@@ -3,8 +3,6 @@ from scrapy.selector import Selector
 from scrapy.spiders import Rule,CrawlSpider
 from scrapy.http import Request
 from scrapy.linkextractors import LinkExtractor
-import sys
-sys.path.append('e:\\Python\\douban_mp_spider\\douban_mp_spider\\items.py')
 
 class DoubanMpSpider(CrawlSpider):
     name="douban_multiple_page_spider"
