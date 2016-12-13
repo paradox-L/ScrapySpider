@@ -1,23 +1,24 @@
 from scrapy.spiders import Spider
 from scrapy.selector import Selector
+from douban_new_movie.items import DoubanNewMovieItem
 
 
 class DoubanNewMovieSpider(Spider):
     name="douban_new_movie_spider"
 
-    allowed_domains=["www.douban.com"]
+    allowed_domains=["douban.com"]
 
     start_urls=[
     'https://movie.douban.com/chart'
     ]
 
     def parse(self,response):
+        print "res"+str(response)
         sel=Selector(response)
 
         movie_name=sel.xpath("//div[@class='p12']/a/text()").extract()
         movie_url=sel.xpath("//div[@class='p12']/a/@href").extract()
         movie_star=sel.xpath("//div[@class='p12']/div/span[@class='rating_nums']/text()").extract()
-
         item=DoubanNewMovieItem()
 
         item['movie_name']=[n.encode('utf-8') for n in movie_name]
