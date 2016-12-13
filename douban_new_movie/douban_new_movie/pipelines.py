@@ -6,6 +6,9 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import json
 import codecs
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 class DoubanNewMoviePipeline(object):
     def open_spider(self,spider):
