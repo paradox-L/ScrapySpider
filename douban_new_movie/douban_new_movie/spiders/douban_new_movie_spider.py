@@ -13,12 +13,11 @@ class DoubanNewMovieSpider(Spider):
     ]
 
     def parse(self,response):
-        print "res"+str(response)
         sel=Selector(response)
 
-        movie_name=sel.xpath("//div[@class='p12']/a/text()").extract()
-        movie_url=sel.xpath("//div[@class='p12']/a/@href").extract()
-        movie_star=sel.xpath("//div[@class='p12']/div/span[@class='rating_nums']/text()").extract()
+        movie_name=sel.xpath("//div[@class='pl2']/a/text()").extract()
+        movie_url=sel.xpath("//div[@class='pl2']/a/@href").extract()
+        movie_star=sel.xpath("//div[@class='pl2']/div/span[@class='rating_nums']/text()").extract()
         item=DoubanNewMovieItem()
 
         item['movie_name']=[n.encode('utf-8') for n in movie_name]
