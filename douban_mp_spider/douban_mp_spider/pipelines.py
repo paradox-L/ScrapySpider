@@ -18,9 +18,9 @@ class DoubanMpSpiderPipeline(object):
 
     def process_item(self, item, spider):
         line='The top250 from doubanmovie' + '\n'
-        for i in range(len(item['movie_name'])):
+        for i in range(len(item['comment'])):
             movie_name={"movie_name":item['movie_name'][i]}
-            star={"movie_name":item['star'][i]}
+            star={"star":item['star'][i]}
             comment={"comment":item['comment'][i]}
 
             line=line + json.dumps(movie_name, ensure_ascii=False)
